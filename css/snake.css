@@ -1,25 +1,29 @@
 * {
   box-sizing: border-box;
+  margin: auto;
+  text-align: center;
+  list-style: none;
 }
+
 #main {
   width: 400px;
   border: 1px solid black;
-  float: left;
 }
 
 .row {
 width: 400px;
-height: 20px;
+height: 10px;
 }
 
 .row div {
-  height: 20px;
+  height: 10px;
   float: left;
-  width: 20px;
+  width: 10px;
 }
 
 .snake {
   background: green;
+  border-radius: 2px;
 }
 
 .cell {
@@ -45,10 +49,7 @@ height: 20px;
 }
 
 #leaderboard{
-  width: 400px;
-  float: left;
 }
 
 #instructions {
-  float: left;
 }

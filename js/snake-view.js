@@ -27,10 +27,7 @@
   }
 
   View.prototype.gameOver = function(){
-    var $button = $("<button class='btn'>Restart Game</button>")
-    $button.on("click", this.restartGame.bind(this))
     clearInterval(this.interval);
-    this.$el.append($button);
 
     var name = prompt("What's your name?");
     this.leaderboard.push([name, this.board.snake.score]);
@@ -40,14 +37,15 @@
   View.prototype.restartGame = function () {
     var that = this;
     that.board = new Board();
-    that.interval = setInterval(that.step.bind(that), 200);
+    clearInterval(this.interval);
+    that.interval = setInterval(that.step.bind(that), 100);
   };
 
   View.prototype.togglePause = function(){
     var that = this;
 
     if (!this.interval) {
-      this.interval = setInterval(that.step.bind(that), 200)
+      this.interval = setInterval(that.step.bind(that), 100)
       this.$el.removeClass("paused");
     } else {
       clearInterval(this.interval);
@@ -65,9 +63,10 @@
       this.board.snake.turn('E');
     } else if (event.keyCode == 40) {
       this.board.snake.turn('S');
-    } else if (event.keyCode == 32){
+    } else if (event.keyCode == 80){
       this.togglePause();
-      console.log("Hi");
+    } else if (event.keyCode == 82){
+      this.restartGame()
     }
   }
 
@@ -83,7 +82,8 @@
     $list.empty();
     var that = this;
     for (i in this.leaderboard.sort(function(a, b){return b[1]-a[1]})) {
-      $entry = $("<li> name: " + this.leaderboard[i][0] +" score: " + this.leaderboard[i][1] + "</li>");
+      $entry = $("<li> name: " + this.leaderboard[i][0] +" score: " +
+            this.leaderboard[i][1] + "</li>");
       $list.append($entry);
     }
   };
