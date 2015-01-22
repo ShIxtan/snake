@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+#main {
+  width: 400px;
+  border: 1px solid black;
+  float: left;
+}
+
+.row {
+width: 400px;
+height: 20px;
+}
+
+.row div {
+  height: 20px;
+  float: left;
+  width: 20px;
+}
+
+.snake {
+  background: green;
+}
+
+.cell {
+}
+
+.apple {
+  background: red;
+  border-radius: 50%;
+}
+
+.score {
+  color: green;
+}
+
+.paused:before {
+  position: absolute;
+  top: 100px;
+  content: "Paused";
+  text-align: center;
+  font-size: 120px;
+  color: red;
+  margin: auto;
+}
+
+#leaderboard{
+  width: 400px;
+  float: left;
+}
+
+#instructions {
+  float: left;
+}

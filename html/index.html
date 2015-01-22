@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Snake</title>
+    <link rel="stylesheet" type="text/css" href="../css/snake.css">
+  </head>
+  <body>
+    <div id="score">
+    </div>
+
+    <div id="main">
+
+    </div>
+    <div id="leaderboard">
+      <ul>
+      </ul>
+    </div>
+
+    <div id="instructions">Press Spacebar to pause</div>
+
+
+    <script src="../js/jquery-2.1.1.js"></script>
+    <script src="../js/snake.js"></script>
+    <script src="../js/snake-view.js"></script>
+    <script charset="utf-8">
+      var $el = $('div#main');
+      var view = new Snake.View($el);
+    </script>
+  </body>
+</html>
